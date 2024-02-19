@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router,Switch,Route,Link,Routes } from "react-router-dom";
+import { BrowserRouter as Router,Route,Link,Routes } from "react-router-dom";
 import Home from '../components/Home';
-
+import About from '../components/About';
+import Service from '../components/Service';
+import Portfolio from '../components/Portfolio';
+import Contact from '../components/Contact';
+import Blog from '../components/Blog';
+import Blogdetails from '../components/Blogdetails';
 export default class Header extends Component {
   render() {
     return (
@@ -24,9 +29,9 @@ export default class Header extends Component {
                   <div className="row align-items-center">
                     <div className="col-xl-2 col-lg-2 col-md-1">
                       <div className="logo">
-                        <a href="index.html">
+                        <Link to="/">
                           <img src="assets/img/logo/logo.png" alt="" />
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="col-xl-10 col-lg-10 col-md-10">
@@ -35,42 +40,42 @@ export default class Header extends Component {
                           <nav>
                             <ul id="navigation">
                               <li>
-                                <a href="index.html">Home</a>
+                                <Link to="/">Home</Link>
                               </li>
                               <li>
-                                <a href="about.html">About</a>
+                                <Link to="/about">About</Link>
                               </li>
                               <li>
-                                <a href="services.html">Services</a>
+                                <Link to="/services">Services</Link>
                               </li>
                               <li>
-                                <a href="portfolio.html">Portfolio</a>
+                                <Link to="/portfolio">Portfolio</Link>
                               </li>
                               <li>
-                                <a href="#">Page</a>
+                                <Link to="#">Page</Link>
                                 <ul className="submenu">
                                   <li>
-                                    <a href="blog.html">Blog</a>
+                                    <Link to="/blog">Blog</Link>
                                   </li>
                                   <li>
-                                    <a href="blog_details.html">Blog Details</a>
+                                    <Link to="/blog-details">Blog Details</Link>
                                   </li>
                                   <li>
-                                    <a href="elements.html">Element</a>
+                                    <Link to="elements.html">Element</Link>
                                   </li>
                                   <li>
-                                    <a href="portfolio_details.html">Portfolio Details</a>
+                                    <Link to="portfolio_details.html">Portfolio Details</Link>
                                   </li>
                                 </ul>
                               </li>
                               <li>
-                                <a href="contact.html">Contact</a>
+                                <Link to="/contact">Contact</Link>
                               </li>
                             </ul>
                           </nav>
                         </div>
                         <div className="header-right-btn f-right d-none d-xl-block ml-20">
-                          <Link href="#" className="btn header-btn">Get Free Consultent</Link>
+                          <Link to="#" className="btn header-btn">Get Free Consultent</Link>
                         </div>
                       </div>
                     </div>
@@ -85,6 +90,12 @@ export default class Header extends Component {
         </div>
           <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Service />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog-details" element={<Blogdetails />} />
         </Routes>
       </Router>
       
